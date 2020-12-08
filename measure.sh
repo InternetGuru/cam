@@ -28,6 +28,7 @@ project_name="$(basename "$PWD")"
 
 echo "$project_namespace"
 echo "$project_name"
+git fetch --all >/dev/null
 echo "[$(git branch -r | grep -v '\->')]"
 
 # for all branches get user projects
