@@ -27,7 +27,7 @@ project_namespace="$(dirname "$PWD" | cut -d/ -f3-)"
 project_name="$(basename "$PWD")"
 
 # for all branches get user projects
-for branch in $(git branch -r | grep -v "->"); do
+for branch in $(git branch -r | grep -v '->'); do
   namespace="$project_namespace/$(basename "$branch")/$project_name"
   # get namespace id
   group_id="$(get_group_id "$namespace")" \
