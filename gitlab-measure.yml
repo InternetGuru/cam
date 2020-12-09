@@ -21,7 +21,7 @@ measure:
           git -C cap checkout "$revision"
         fi
     - chmod +x cap/java-measure.sh
-    - curl -o moss "$CAP_MOSS"
+    - curl -o moss "$CAP_MOSSURL"
     - chmod +x moss
   script:
     # run plagiarism check
