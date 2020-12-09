@@ -20,10 +20,10 @@ measure:
           revision="$(git -C cap tag | grep ^v$CAP_REVISION\. | sort --version-sort | tail -1)"
           git -C cap checkout "$revision"
         fi
-    - chmod +x cap/measure.sh
+    - chmod +x cap/java-measure.sh
     - curl -o moss "$CAP_MOSS"
     - chmod +x moss
   script:
     # run plagiarism check
-    - ./cap/measure.sh "$ACCESS_TOKEN"
+    - ./cap/java-measure.sh "$ACCESS_TOKEN"
   when: manual
