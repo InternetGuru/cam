@@ -24,7 +24,7 @@
       - measure
     ```
 
-1. To execute moss plagiarism check script and obtain URL with moss results [run CI manually](https://docs.gitlab.com/ee/ci/pipelines/#run-a-pipeline-manually),
+1. To execute moss plagiarism check script and obtain URL with moss results [run CI manually](https://docs.gitlab.com/ee/ci/pipelines/#run-a-pipeline-manually).
 
 ## Suggestions
 
