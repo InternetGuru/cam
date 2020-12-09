@@ -25,15 +25,11 @@ get_group_projects() {
 mkdir "$PROJECTS_FOLDER"
 project_namespace="$(dirname "$PWD" | cut -d/ -f3-)"
 project_name="$(basename "$PWD")"
-
-echo "$project_namespace"
-echo "$project_name"
+# get all branches
 git fetch --all >/dev/null
-echo "[$(git branch -r | grep -v '\->')]"
 
 # for all branches get user projects
 for branch in $(git branch -r | grep -v '\->'); do
-  echo "$(basename "$branch")"
   namespace="$project_namespace/$(basename "$branch")/$project_name"
   # get namespace id
   group_id="$(get_group_id "$namespace")" \
@@ -42,7 +38,6 @@ for branch in $(git branch -r | grep -v '\->'); do
     && continue
   projects="$(get_group_projects "$group_id")" \
     || exception "API error"
-  echo "$projects"
   # clone all projects from ns
   for project in $projects; do
     git clone -q "$(get_project_origin_url "$project")" "$PROJECTS_FOLDER/$(basename "$project")" \
