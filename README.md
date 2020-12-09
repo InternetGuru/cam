@@ -11,12 +11,13 @@
 
 1. Make sure you have your [personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#creating-a-personal-access-token). On GitLab [set ACCESS_TOKEN variable](https://docs.gitlab.com/ee/ci/variables/#create-a-custom-variable-in-the-ui) into your root namespace.
 
-1. Add the following lines into your `.gitlab-ci.yml`. You may want to select a different `measure.sh` revision. Do not modify `CAP_REVISION` variable unless you know what you're doing.
+1. Add the following lines into your `.gitlab-ci.yml`. Specify moss location URL in `CAP_MOSS` varible. You may want to select a different `measure.sh` revision. Do not modify `CAP_REVISION` variable unless you know what you're doing.
 
     ```
     include: 'https://raw.githubusercontent.com/InternetGuru/cap/master/gitlab-measure.yml'
 
     variables:
+      CAP_MOSS: "https://moss_location"
       CAP_REVISION: "1"
 
     stages:
