@@ -41,7 +41,8 @@ for branch in $(git branch -r | grep -v '\->'); do
     || exception "API error"
   # clone all projects from ns
   for project in $projects; do
-    git clone -q "$(get_project_origin_url "$project")" "$PROJECTS_FOLDER/$(basename "$project")" \
+    mkdir -p "$PROJECTS_FOLDER/$project"
+    git clone -q "$(get_project_origin_url "$project")" "$PROJECTS_FOLDER/$project" \
       || exception "Unable to clone project $project from $namespace"
   done
 done
@@ -50,4 +51,4 @@ done
 shopt -s globstar
 
 # send projects into moss
-./moss -l "$CAP_LANG" -d "$PROJECTS_FOLDER"/*/src/main/**/*."$CAP_LANG" src/main/**/*."$CAP_LANG"
+./moss -l "$CAP_LANG" -d "$PROJECTS_FOLDER"/**/src/main/**/*."$CAP_LANG" src/main/**/*."$CAP_LANG"
