@@ -12,7 +12,12 @@ measure:
     - git config --global user.email "$GITLAB_USER_EMAIL"
     - git config --global user.name "Runner = $CI_RUNNER_DESCRIPTION"
     # prepare acccess token for update script
-    - if [[ -z "$ACCESS_TOKEN" ]]; then echo "Undefined variable ACCESS_TOKEN"; exit 1; fi
+    - |
+        if [[ -z "$ACCESS_TOKEN" ]]; then
+          echo "Undefined variable ACCESS_TOKEN"
+          echo "Refer to README and make sure the current branch is protected."
+          exit 1
+        fi
     # install cap
     - git clone https://github.com/InternetGuru/cap
     - |
