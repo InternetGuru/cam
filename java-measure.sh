@@ -5,7 +5,7 @@ SCRIPT_NAME="$(basename "$0")"
 GITLAB_URL="https://gitlab.com"
 PROJECTS_FOLDER="projects"
 TOKEN="$1"
-CAP_LANG="java"
+CAM_LANG="java"
 
 exception() {
   echo "EXCEPTION: ${1:-$SCRIPT_NAME Exception}" >&2
