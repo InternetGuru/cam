@@ -51,4 +51,4 @@ done
 shopt -s globstar
 
 # send projects into moss
-./moss -l "$CAP_LANG" -d "$PROJECTS_FOLDER"/**/src/main/**/*."$CAP_LANG" src/main/**/*."$CAP_LANG"
+./moss -l "$CAM_LANG" -d "$PROJECTS_FOLDER"/**/src/main/**/*."$CAM_LANG" src/main/**/*."$CAM_LANG"
