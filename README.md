@@ -1,8 +1,8 @@
 
-![tests badge at master](https://github.com/InternetGuru/cap/workflows/tests/badge.svg?branch=master)
-![tests badge at dev](https://github.com/InternetGuru/cap/workflows/tests/badge.svg?branch=dev)
+![tests badge at master](https://github.com/InternetGuru/cam/workflows/tests/badge.svg?branch=master)
+![tests badge at dev](https://github.com/InternetGuru/cam/workflows/tests/badge.svg?branch=dev)
 
-# Coding Assignment Plagiarism | CAP
+# Coding Assignment Measure | CAM
 
 > This GitLab CI project downloads GitLab repositories and checks for Java code similarities using Moss script. It includes current project (on current branch) plus all repositories distributed from its individual branches using [CAD](https://github.com/InternetGuru/cad). Files to compare are from `src/main/**/*.java`.
 
@@ -16,14 +16,14 @@
 
    - E.g. [umiami/george/csc220/matrix](https://gitlab.com/umiami/george/csc220/matrix)
 
-1. Add the following lines into your `.gitlab-ci.yml`. Specify Moss location URL in `CAP_MOSS` variable. You may want to select a different `measure.sh` revision. Do not modify `CAP_REVISION` variable unless you know what you're doing.
+1. Add the following lines into your `.gitlab-ci.yml`. Specify Moss location URL in `CAM_MOSS` variable. You may want to select a different `measure.sh` revision. Do not modify `CAM_REVISION` variable unless you know what you're doing.
 
     ```
-    include: 'https://raw.githubusercontent.com/InternetGuru/cap/master/gitlab-measure.yml'
+    include: 'https://raw.githubusercontent.com/InternetGuru/cam/master/gitlab-measure.yml'
 
     variables:
-      CAP_MOSSURL: ""
-      CAP_REVISION: "1"
+      CAM_MOSSURL: ""
+      CAM_REVISION: "1"
 
     stages:
       - measure
