@@ -18,17 +18,17 @@ measure:
           echo "Refer to README and make sure the current branch is protected."
           exit 1
         fi
-    # install cap
-    - git clone https://github.com/InternetGuru/cap
+    # install cam
+    - git clone https://github.com/InternetGuru/cam
     - |
-        if ! git -C cap checkout -q "$CAP_REVISION"; then
-          revision="$(git -C cap tag | grep ^v$CAP_REVISION\. | sort --version-sort | tail -1)"
-          git -C cap checkout "$revision"
+        if ! git -C cam checkout -q "$CAM_REVISION"; then
+          revision="$(git -C cam tag | grep ^v$CAM_REVISION\. | sort --version-sort | tail -1)"
+          git -C cam checkout "$revision"
         fi
-    - chmod +x cap/java-measure.sh
-    - curl -o moss "$CAP_MOSSURL"
+    - chmod +x cam/java-measure.sh
+    - curl -o moss "$CAM_MOSSURL"
     - chmod +x moss
   script:
     # run plagiarism check
-    - ./cap/java-measure.sh "$ACCESS_TOKEN"
+    - ./cam/java-measure.sh "$ACCESS_TOKEN"
   when: manual
