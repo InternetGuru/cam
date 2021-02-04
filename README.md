@@ -4,7 +4,7 @@
 
 # Coding Assignment Measure | CAM
 
-> This GitLab CI project downloads GitLab repositories and checks for Java code similarities using Moss script. It includes current project (on current branch) plus all repositories distributed from its individual branches using [CAD](https://github.com/InternetGuru/cad). Files to compare are from `src/main/**/*.java`.
+> This GitLab CI project downloads GitLab repositories and *measures for software similarities* using Moss script. It includes current project (on current branch) plus all repositories distributed from its individual branches using [CAD](https://github.com/InternetGuru/cad).
 
 ## GitLab CI Usage
 
@@ -29,7 +29,7 @@
       - measure
     ```
 
-1. To execute Moss plagiarism check and obtain URL with Moss results [run **measure stage** CI manually](https://docs.gitlab.com/ee/ci/pipelines/#run-a-pipeline-manually). You will find the URL with Moss results at the end of the pipeline output log.
+1. To execute coding assignment measure and obtain URL with Moss results [run **measure stage** CI manually](https://docs.gitlab.com/ee/ci/pipelines/#run-a-pipeline-manually). You will find the URL with Moss results at the end of the pipeline output log.
 
 ## Suggestions
 
